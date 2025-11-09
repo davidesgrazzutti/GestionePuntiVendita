@@ -9,7 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseInMemoryDatabase("ShopDB"));
+    options.UseSqlite("Data Source=gestione.db"));
 
 
 // --- SERVIZI ---
@@ -18,6 +18,27 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+
+    // Crea il DB se non esiste
+    db.Database.EnsureCreated();
+
+    // Seed prodotti solo la prima volta
+    if (!db.Products.Any())
+    {
+        db.Products.AddRange(
+            new Product { Sku = "BEV-001", Name = "Acqua Naturale 0.5L", Category = "Bevande", UnitPrice = 1.00m },
+            new Product { Sku = "BEV-002", Name = "Caffè Espresso", Category = "Bevande", UnitPrice = 1.20m },
+            new Product { Sku = "ALM-001", Name = "Panino Prosciutto", Category = "Alimentari", UnitPrice = 4.50m },
+            new Product { Sku = "ELT-001", Name = "Cavo USB-C", Category = "Elettronica", UnitPrice = 8.90m }
+        );
+        db.SaveChanges();
+    }
+}
+
 
 // --- PIPELINE ---
 if (app.Environment.IsDevelopment())
