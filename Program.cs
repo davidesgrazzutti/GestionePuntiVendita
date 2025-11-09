@@ -6,6 +6,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // --- Servizi ---
 builder.Services.AddControllers();
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader());
+});
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -33,7 +40,7 @@ using (var scope = app.Services.CreateScope())
             new Product { Sku = "BEV-001", Name = "Acqua Naturale 0.5L", Category = "Bevande", UnitPrice = 1.00m },
             new Product { Sku = "BEV-002", Name = "Caffè Espresso", Category = "Bevande", UnitPrice = 1.20m },
             new Product { Sku = "ALM-001", Name = "Panino Prosciutto", Category = "Alimentari", UnitPrice = 4.50m },
-            new Product { Sku = "ELT-001", Name = "Cavo USB-C", Category = "Elettronica", UnitPrice = 8.90m }
+            new Product { Sku = "ELT-001", Name = "Dolce", Category = "Alimentari", UnitPrice = 8.90m }
         );
         db.SaveChanges();
     }
@@ -73,6 +80,7 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast");
 
+app.UseCors();
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)

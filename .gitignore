@@ -1,11 +1,40 @@
-# Build output
+# === .NET ===
 bin/
 obj/
-.vs/
-
-# User files
 *.user
 *.suo
+*.swp
+.vs/
+*.db-shm
+*.db-wal
+*.db
 
-# Environment files
-.env
+# Config files
+appsettings.*.json
+!.appsettings.Development.json
+
+# === Entity Framework Migrations Cache ===
+Migrations/
+
+# === Logs ===
+*.log
+logs/
+LogFiles/
+*.pid
+
+# React frontend
+frontend/node_modules/
+frontend/build/
+frontend/.env.local
+frontend/.env.*
+frontend/.eslintcache
+
+
+# === System ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === IDE ===
+.vscode/
+.idea/

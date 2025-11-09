@@ -1,0 +1,32 @@
+body {
+  background-color: #f8fafc;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+h1 {
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.table {
+  background-color: #ffffff;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+

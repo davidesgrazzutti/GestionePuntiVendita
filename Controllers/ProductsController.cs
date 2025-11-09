@@ -21,7 +21,7 @@ public class ProductsController : ControllerBase
                 new Product { Id = 1, Sku = "BEV-001", Name = "Acqua Naturale 0.5L", Category = "Bevande", UnitPrice = 1.00m },
                 new Product { Id = 2, Sku = "BEV-002", Name = "Caffè Espresso", Category = "Bevande", UnitPrice = 1.20m },
                 new Product { Id = 3, Sku = "ALM-001", Name = "Panino Prosciutto", Category = "Alimentari", UnitPrice = 4.50m },
-                new Product { Id = 4, Sku = "ELT-001", Name = "Cavo USB-C", Category = "Elettronica", UnitPrice = 8.90m }
+                new Product { Id = 4, Sku = "ELT-001", Name = "Dolce", Category = "Alimentari", UnitPrice = 8.90m }
             );
             _context.SaveChanges();
         }
