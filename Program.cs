@@ -1,4 +1,16 @@
+using GestionePuntiVendita.Data;
+using GestionePuntiVendita.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// --- Servizi ---
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseInMemoryDatabase("ShopDB"));
+
 
 // --- SERVIZI ---
 builder.Services.AddControllers();
