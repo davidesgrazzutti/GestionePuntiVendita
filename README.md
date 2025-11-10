@@ -35,7 +35,7 @@ Prima di iniziare, assicurati di avere installato i seguenti strumenti:
 ### 1. Clonazione del Progetto
 
 ```bash
-git clone [https://github.com/davidesgrazzutti/GestionePuntiVendita.git](https://github.com/davidesgrazzutti/GestionePuntiVendita.git)```
+git clone [https://github.com/davidesgrazzutti/GestionePuntiVendita.git](https://github.com/davidesgrazzutti/GestionePuntiVendita.git)
 ```
 
 ### 2. Backend
