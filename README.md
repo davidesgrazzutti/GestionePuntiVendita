@@ -60,7 +60,7 @@ Per accedere alla documentazione interattiva delle API (**Swagger UI**):
 
     ```bash
     npm install
-    npm start`
+    npm start
     ```
 
 Il frontend sarà visibile su:
