@@ -5,9 +5,9 @@ consente di **gestire prodotti**, **creare scontrini** e **consultare lo storico
 
 ---
 
-## ** Tecnologie**
+## **Tecnologie**
 
-### ** Backend**
+### **Backend**
 - **.NET 9 (ASP.NET Core Web API)** 
 - **Entity Framework Core + SQLite**   
 - **Swagger UI**   
@@ -15,7 +15,7 @@ consente di **gestire prodotti**, **creare scontrini** e **consultare lo storico
 
 ---
 
-### ** Frontend**
+### **Frontend**
 - **React**   
 - **Bootstrap 5**   
 
