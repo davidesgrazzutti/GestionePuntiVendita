@@ -65,12 +65,13 @@ Il frontend sarà visibile su:
 
 ---
 
+## **Cosa manca**
+
 ###  **Autenticazione e Autorizzazione**
 - Attualmente l’applicazione non richiede login.  
 - Si potrebbe integrare un sistema di autenticazione.
 - Ogni utente potrebbe avere un proprio storico scontrini.
 
----
 
 ###  **Gestione Avanzata dei Prodotti**
 - Aggiunta di endpoint **POST / PUT / DELETE** per creare, aggiornare o rimuovere prodotti.  
