@@ -38,6 +38,7 @@ git clone [https://github.com/davidesgrazzutti/GestionePuntiVendita.git](https:/
 
 ### 2. Backend
   Dal terminale, posizionati nella **cartella principale GestionePuntiVendita**:
+  
   Esegui i seguenti comandi per compilare e avviare il backend:
 
     dotnet build
