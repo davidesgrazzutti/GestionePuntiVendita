@@ -52,7 +52,7 @@ Per accedere alla documentazione interattiva delle API (**Swagger UI**):
 > ℹ️ Il database `gestione.db` verrà creato automaticamente al primo avvio, con un seed iniziale di 4 prodotti.
 
 ### 3. Frontend
-1.  Apri la cartella del progetto frontend  (che si trova all'interno della directory principale).
+1.  Posizionati nella cartella frontend  che si trova all'interno della directory principale.
 2.  Apri un termianle in questa cartella e poi digita i seguenti programmi:
 
     ```bash
