@@ -1,7 +1,7 @@
 #  **Sistema Gestione Punto Vendita**
 
 Applicazione **full-stack** per la gestione di un punto vendita:  
-consente di **gestire prodotti**, **creare scontrini** e **consultare lo storico delle vendite**.
+consente di **visualizzare prodotti**, **creare scontrini** e **consultare lo storico delle vendite**.
 
 ---
 
