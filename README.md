@@ -35,10 +35,9 @@ Prima di iniziare, assicurati di avere installato i seguenti strumenti:
 ### 1. Clonazione del Progetto
 
 git clone [https://github.com/davidesgrazzutti/GestionePuntiVendita.git](https://github.com/davidesgrazzutti/GestionePuntiVendita.git)
-cd GestionePuntiVendita
 
 ### 2. Backend
-  Dal terminale, posizionati nella **cartella principale GestionePuntiVendita** con il seguente comando:
+  Dal terminale, posizionati nella **cartella principale GestionePuntiVendita**:
   Esegui i seguenti comandi per compilare e avviare il backend:
 
     dotnet build
