@@ -1,6 +1,8 @@
 using GestionePuntiVendita.Data;
 using GestionePuntiVendita.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +24,25 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // --- SERVIZI ---
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "🏪 Gestione Punti Vendita API",
+        Version = "v1",
+        Description = "API REST per la gestione di prodotti e scontrini in un punto vendita. " +
+                      "Include endpoint per la creazione di scontrini, gestione prodotti e storico vendite.",
+        Contact = new OpenApiContact
+        {
+            Name = "Davide Sgrazzutti",
+            Url = new Uri("https://github.com/davidesgrazzutti")
+        }
+    });
+
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+});
+
 
 var app = builder.Build();
 
@@ -59,31 +79,5 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Endpoint di test
-app.MapGet("/weatherforecast", () =>
-{
-    var summaries = new[]
-    {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
-
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-
-    return forecast;
-})
-.WithName("GetWeatherForecast");
-
 app.UseCors();
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

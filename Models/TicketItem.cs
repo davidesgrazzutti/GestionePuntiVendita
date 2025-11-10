@@ -1,22 +1,29 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace GestionePuntiVendita.Models;
-
-public class TicketItem
+namespace GestionePuntiVendita.Models
 {
-    public int Id { get; set; }
+    /// <summary>
+    /// Rappresenta una singola voce dello scontrino (prodotto acquistato).
+    /// </summary>
+    public class TicketItem
+    {
+        public int Id { get; set; }
 
-    [Required]
-    public int ProductId { get; set; }
+        [Required]
+        public int ProductId { get; set; }
 
-    [Range(1, int.MaxValue, ErrorMessage = "La quantità deve essere almeno 1")]
-    public int Quantity { get; set; }
+        [Required]
+        public string ProductName { get; set; } = default!;
 
-    [Range(0.01, double.MaxValue, ErrorMessage = "Il prezzo deve essere maggiore di zero")]
-    public decimal UnitPrice { get; set; }
+        [Range(1, int.MaxValue, ErrorMessage = "La quantità deve essere almeno 1")]
+        public int Quantity { get; set; }
 
-    public decimal Subtotal => UnitPrice * Quantity;
+        [Range(0.01, double.MaxValue, ErrorMessage = "Il prezzo deve essere maggiore di zero")]
+        public decimal UnitPrice { get; set; }
 
-    [Required]
-    public string ProductName { get; set; } = default!;
+        /// <summary>
+        /// Subtotale per il prodotto (quantità × prezzo unitario).
+        /// </summary>
+        public decimal Subtotal => UnitPrice * Quantity;
+    }
 }

@@ -51,3 +51,20 @@ h1 {
   padding: 0;
   line-height: 1;
 }
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.table td.text-end {
+  font-variant-numeric: tabular-nums; /* allinea le cifre */
+  width: 100px;
+}
+
+.table td.text-center {
+  width: 70px;
+}
+
+.table th.text-end {
+  text-align: right;
+}
