@@ -67,7 +67,7 @@ Il frontend sarà visibile su:
 
 ###  **Autenticazione e Autorizzazione**
 - Attualmente l’applicazione non richiede login.  
-- Si potrebbe integrare un sistema di autenticazione **JWT (JSON Web Token)**.
+- Si potrebbe integrare un sistema di autenticazione.
 - Ogni utente potrebbe avere un proprio storico scontrini.
 
 ---
