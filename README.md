@@ -26,9 +26,9 @@ consente di **visualizzare prodotti**, **creare scontrini** e **consultare lo st
 
 Prima di iniziare, assicurati di avere installato i seguenti strumenti:
 
-* ** Git** → [https://git-scm.com/downloads](https://git-scm.com/downloads)
-* ** .NET 9 SDK** → [https://dotnet.microsoft.com/en-us/download](https://dotnet.microsoft.com/en-us/download)
-* ** Node.js + npm** → [https://nodejs.org/en/download](https://nodejs.org/en/download)
+* **Git** → [https://git-scm.com/downloads](https://git-scm.com/downloads)
+* **.NET 9 SDK** → [https://dotnet.microsoft.com/en-us/download](https://dotnet.microsoft.com/en-us/download)
+* **Node.js + npm** → [https://nodejs.org/en/download](https://nodejs.org/en/download)
 
 
 ### 1. Clonazione del Progetto
