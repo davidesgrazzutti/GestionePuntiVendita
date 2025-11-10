@@ -9,7 +9,7 @@ function App() {
   const [total, setTotal] = useState(0);
   const [ticketsHistory, setTicketsHistory] = useState([]);
 
-  // 🧾 Carica prodotti
+  //  Carica prodotti
   useEffect(() => {
     fetch(`${API_BASE}/api/products`)
       .then((res) => res.json())
@@ -17,7 +17,7 @@ function App() {
       .catch(() => alert("Errore nel caricamento dei prodotti"));
   }, []);
 
-  // 📜 Carica storico scontrini
+  // Carica storico scontrini
   useEffect(() => {
     fetch(`${API_BASE}/api/tickets`)
       .then((res) => res.json())
@@ -25,7 +25,7 @@ function App() {
       .catch(() => console.error("Errore caricamento storico scontrini"));
   }, []);
 
-  // ➕ Aggiungi prodotto allo scontrino
+  // Aggiungi prodotto allo scontrino
   const addToTicket = (p) => {
     const existing = ticketItems.find((i) => i.productId === p.id);
     let updated;
@@ -50,7 +50,7 @@ function App() {
     calculateTotal(updated);
   };
 
-  // ➖ Diminuisci quantità
+  //  Diminuisci quantità
   const decreaseQuantity = (id) => {
     let updated = ticketItems
       .map((i) =>
@@ -62,20 +62,20 @@ function App() {
     calculateTotal(updated);
   };
 
-  // 🗑️ Rimuovi prodotto
+  // Rimuovi prodotto
   const removeItem = (id) => {
     const updated = ticketItems.filter((i) => i.productId !== id);
     setTicketItems(updated);
     calculateTotal(updated);
   };
 
-  // 💰 Calcola totale
+  // Calcola totale
   const calculateTotal = (items) => {
     const sum = items.reduce((acc, i) => acc + i.unitPrice * i.quantity, 0);
     setTotal(sum.toFixed(2));
   };
 
-  // 💾 Invia ticket al backend
+  // Invia ticket al backend
   const submitTicket = () => {
     if (ticketItems.length === 0) {
       alert("Aggiungi almeno un prodotto allo scontrino!");
@@ -97,7 +97,7 @@ function App() {
       .catch(() => alert("Errore durante la creazione dello scontrino"));
   };
 
-  // 🔄 Ricarica storico
+  // Ricarica storico
   const refreshHistory = () => {
     fetch(`${API_BASE}/api/tickets`)
       .then((res) => res.json())
@@ -108,7 +108,7 @@ function App() {
     <div className="container py-4">
       <h1 className="text-center mb-4">Gestione Punto Vendita</h1>
 
-      {/* 🛒 Prodotti */}
+      {/*  Prodotti */}
       <div className="d-flex flex-wrap justify-content-center gap-3">
         {products.map((p) => (
           <div
@@ -135,7 +135,7 @@ function App() {
         ))}
       </div>
 
-      {/* 🧾 Scontrino */}
+      {/*  Scontrino */}
       <div className="mt-5">
         <h2>Scontrino</h2>
         {ticketItems.length === 0 ? (
@@ -213,7 +213,7 @@ function App() {
         </button>
       </div>
 
-      {/* 📜 Storico (sempre visibile) */}
+      {/*  Storico (sempre visibile) */}
       <div className="mt-5">
         <h2 className="mb-3">Storico Scontrini</h2>
 

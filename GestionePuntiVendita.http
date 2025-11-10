@@ -1,6 +1,0 @@
-@GestionePuntiVendita_HostAddress = http://localhost:5133
-
-GET {{GestionePuntiVendita_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

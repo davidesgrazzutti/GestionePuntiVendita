@@ -28,14 +28,14 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "🏪 Gestione Punti Vendita API",
+        Title = "Gestione Punti Vendita API",
         Version = "v1",
         Description = "API REST per la gestione di prodotti e scontrini in un punto vendita. " +
                       "Include endpoint per la creazione di scontrini, gestione prodotti e storico vendite.",
         Contact = new OpenApiContact
         {
             Name = "Davide Sgrazzutti",
-            Url = new Uri("https://github.com/davidesgrazzutti")
+            Url = new Uri("https://github.com/davidesgrazzutti/GestionePuntiVendita")
         }
     });
 
@@ -60,7 +60,7 @@ using (var scope = app.Services.CreateScope())
             new Product { Sku = "BEV-001", Name = "Acqua Naturale 0.5L", Category = "Bevande", UnitPrice = 1.00m },
             new Product { Sku = "BEV-002", Name = "Caffè Espresso", Category = "Bevande", UnitPrice = 1.20m },
             new Product { Sku = "ALM-001", Name = "Panino Prosciutto", Category = "Alimentari", UnitPrice = 4.50m },
-            new Product { Sku = "ELT-001", Name = "Dolce", Category = "Alimentari", UnitPrice = 8.90m }
+            new Product { Sku = "ALM-002", Name = "Dolce", Category = "Alimentari", UnitPrice = 8.90m }
         );
         db.SaveChanges();
     }
