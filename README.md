@@ -34,7 +34,9 @@ Prima di iniziare, assicurati di avere installato i seguenti strumenti:
 
 ### 1. Clonazione del Progetto
 
-git clone [https://github.com/davidesgrazzutti/GestionePuntiVendita.git](https://github.com/davidesgrazzutti/GestionePuntiVendita.git)
+```bash
+git clone [https://github.com/davidesgrazzutti/GestionePuntiVendita.git](https://github.com/davidesgrazzutti/GestionePuntiVendita.git)```
+```
 
 ### 2. Backend
   Dal terminale, posizionati nella **cartella principale GestionePuntiVendita**:
@@ -56,8 +58,10 @@ Per accedere alla documentazione interattiva delle API (**Swagger UI**):
 1.  Apri la cartella del progetto frontend  (che si trova all'interno della directory principale).
 2.  Apri un termianle in questa cartella e poi digita i seguenti programmi:
 
+    ```bash
     npm install
-    npm start
+    npm start`
+    ```
 
 Il frontend sarà visibile su:
 **`http://localhost:3000`**
