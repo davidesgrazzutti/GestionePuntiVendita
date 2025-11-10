@@ -45,8 +45,6 @@ git clone https://github.com/davidesgrazzutti/GestionePuntiVendita.git
     dotnet build
     dotnet run
 
-L'applicazione sarà disponibile su:
-**`http://localhost:5000`**
 
 Per accedere alla documentazione interattiva delle API (**Swagger UI**):
 **`http://localhost:5000/swagger`**
