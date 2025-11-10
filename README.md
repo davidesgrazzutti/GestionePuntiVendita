@@ -8,16 +8,16 @@ consente di **gestire prodotti**, **creare scontrini** e **consultare lo storico
 ## ** Tecnologie**
 
 ### ** Backend**
-- **.NET 9 (ASP.NET Core Web API)** → per la gestione delle API REST e della logica di business  
-- **Entity Framework Core + SQLite** → per la persistenza dei dati tramite ORM leggero  
-- **Swagger UI** → per la documentazione interattiva e il test diretto degli endpoint  
-- **NUnit** → per l’esecuzione dei test unitari sul calcolo degli scontrini  
+- **.NET 9 (ASP.NET Core Web API)** 
+- **Entity Framework Core + SQLite**   
+- **Swagger UI**   
+- **NUnit**   
 
 ---
 
 ### ** Frontend**
-- **React** → per la costruzione di un’interfaccia utente dinamica e reattiva  
-- **Bootstrap 5** → per il layout responsivo e lo stile grafico moderno  
+- **React**   
+- **Bootstrap 5**   
 
 
 ---
