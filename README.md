@@ -29,8 +29,7 @@ Prima di iniziare, assicurati di avere installato i seguenti strumenti:
 * ** Git** → [https://git-scm.com/downloads](https://git-scm.com/downloads)
 * ** .NET 9 SDK** → [https://dotnet.microsoft.com/en-us/download](https://dotnet.microsoft.com/en-us/download)
 * ** Node.js + npm** → [https://nodejs.org/en/download](https://nodejs.org/en/download)
-* ** (Opzionale) Visual Studio Code** → [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)
-* ** (Opzionale) Visual Studio 2022** → [https://visualstudio.microsoft.com/it/vs/](https://visualstudio.microsoft.com/it/vs/)
+
 
 ### 1. Clonazione del Progetto
 
