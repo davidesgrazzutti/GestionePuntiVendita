@@ -9,7 +9,7 @@ function App() {
   const [total, setTotal] = useState(0);
   const [ticketsHistory, setTicketsHistory] = useState([]);
 
-  //  Carica prodotti
+  // Carica prodotti
   useEffect(() => {
     fetch(`${API_BASE}/api/products`)
       .then((res) => res.json())
@@ -27,44 +27,41 @@ function App() {
 
   // Aggiungi prodotto allo scontrino
   const addToTicket = (p) => {
-    const existing = ticketItems.find((i) => i.productId === p.id);
+    const existing = ticketItems.find((i) => i.productSku === p.sku);
     let updated;
-
     if (existing) {
       updated = ticketItems.map((i) =>
-        i.productId === p.id ? { ...i, quantity: i.quantity + 1 } : i
+        i.productSku === p.sku ? { ...i, quantity: i.quantity + 1 } : i
       );
     } else {
       updated = [
         ...ticketItems,
         {
-          productId: p.id,
+          productSku: p.sku,
           productName: p.name,
           quantity: 1,
           unitPrice: p.unitPrice,
         },
       ];
     }
-
     setTicketItems(updated);
     calculateTotal(updated);
   };
 
-  //  Diminuisci quantità
-  const decreaseQuantity = (id) => {
+  // Diminuisci quantità
+  const decreaseQuantity = (sku) => {
     let updated = ticketItems
       .map((i) =>
-        i.productId === id ? { ...i, quantity: i.quantity - 1 } : i
+        i.productSku === sku ? { ...i, quantity: i.quantity - 1 } : i
       )
       .filter((i) => i.quantity > 0);
-
     setTicketItems(updated);
     calculateTotal(updated);
   };
 
   // Rimuovi prodotto
-  const removeItem = (id) => {
-    const updated = ticketItems.filter((i) => i.productId !== id);
+  const removeItem = (sku) => {
+    const updated = ticketItems.filter((i) => i.productSku !== sku);
     setTicketItems(updated);
     calculateTotal(updated);
   };
@@ -75,7 +72,7 @@ function App() {
     setTotal(sum.toFixed(2));
   };
 
-  // Invia ticket al backend
+  // Invia ticket
   const submitTicket = () => {
     if (ticketItems.length === 0) {
       alert("Aggiungi almeno un prodotto allo scontrino!");
@@ -97,7 +94,6 @@ function App() {
       .catch(() => alert("Errore durante la creazione dello scontrino"));
   };
 
-  // Ricarica storico
   const refreshHistory = () => {
     fetch(`${API_BASE}/api/tickets`)
       .then((res) => res.json())
@@ -112,7 +108,7 @@ function App() {
       <div className="d-flex flex-wrap justify-content-center gap-3">
         {products.map((p) => (
           <div
-            key={p.id}
+            key={p.sku}
             className="card shadow-sm"
             style={{
               width: "220px",
@@ -123,7 +119,9 @@ function App() {
             <div className="card-body text-center">
               <h5 className="card-title">{p.name}</h5>
               <p className="text-muted mb-1">{p.category}</p>
-              <h6 className="fw-bold text-success">€ {p.unitPrice.toFixed(2)}</h6>
+              <h6 className="fw-bold text-success">
+                € {p.unitPrice.toFixed(2)}
+              </h6>
               <button
                 className="btn btn-primary mt-2 fw-semibold"
                 onClick={() => addToTicket(p)}
@@ -154,13 +152,13 @@ function App() {
               </thead>
               <tbody>
                 {ticketItems.map((i) => (
-                  <tr key={i.productId}>
+                  <tr key={i.productSku}>
                     <td>{i.productName}</td>
                     <td className="text-center align-middle">
                       <div className="d-flex justify-content-center align-items-center gap-2">
                         <button
                           className="btn btn-sm btn-outline-secondary"
-                          onClick={() => decreaseQuantity(i.productId)}
+                          onClick={() => decreaseQuantity(i.productSku)}
                         >
                           −
                         </button>
@@ -169,7 +167,7 @@ function App() {
                           className="btn btn-sm btn-outline-secondary"
                           onClick={() =>
                             addToTicket({
-                              id: i.productId,
+                              sku: i.productSku,
                               name: i.productName,
                               unitPrice: i.unitPrice,
                             })
@@ -184,7 +182,7 @@ function App() {
                     <td className="text-center">
                       <button
                         className="btn btn-sm btn-danger"
-                        onClick={() => removeItem(i.productId)}
+                        onClick={() => removeItem(i.productSku)}
                       >
                         🗑️ Rimuovi
                       </button>
@@ -213,10 +211,9 @@ function App() {
         </button>
       </div>
 
-      {/*  Storico (sempre visibile) */}
+      {/* Storico Scontrini */}
       <div className="mt-5">
-        <h2 className="mb-3">Storico Scontrini</h2>
-
+        <h2>Storico Scontrini</h2>
         {ticketsHistory.length === 0 ? (
           <p className="text-muted">Nessuno scontrino emesso.</p>
         ) : (
@@ -244,7 +241,9 @@ function App() {
                       <tr key={idx}>
                         <td className="text-start">{i.productName}</td>
                         <td className="text-center">{i.quantity}</td>
-                        <td className="text-end">€ {i.unitPrice.toFixed(2)}</td>
+                        <td className="text-end">
+                          € {i.unitPrice.toFixed(2)}
+                        </td>
                         <td className="text-end">
                           € {(i.quantity * i.unitPrice).toFixed(2)}
                         </td>

@@ -31,10 +31,10 @@ public class ProductsController : ControllerBase
         if (!_context.Products.Any())
         {
             _context.Products.AddRange(
-                new Product { Id = 1, Sku = "BEV-001", Name = "Acqua Naturale 0.5L", Category = "Bevande", UnitPrice = 1.00m },
-                new Product { Id = 2, Sku = "BEV-002", Name = "Caffè Espresso", Category = "Bevande", UnitPrice = 1.20m },
-                new Product { Id = 3, Sku = "ALM-001", Name = "Panino Prosciutto", Category = "Alimentari", UnitPrice = 4.50m },
-                new Product { Id = 4, Sku = "ALM-002", Name = "Dolce", Category = "Alimentari", UnitPrice = 8.90m }
+                new Product { Sku = "BEV-001", Name = "Acqua Naturale 0.5L", Category = "Bevande", UnitPrice = 1.00m },
+                new Product { Sku = "BEV-002", Name = "Caffè Espresso", Category = "Bevande", UnitPrice = 1.20m },
+                new Product { Sku = "ALM-001", Name = "Panino Prosciutto", Category = "Alimentari", UnitPrice = 4.50m },
+                new Product { Sku = "ALM-002", Name = "Dolce", Category = "Alimentari", UnitPrice = 8.90m }
             );
             _context.SaveChanges();
         }
@@ -49,7 +49,6 @@ public class ProductsController : ControllerBase
     ///     GET /api/products
     ///     [
     ///        {
-    ///          "id": 1,
     ///          "sku": "BEV-001",
     ///          "name": "Acqua Naturale 0.5L",
     ///          "category": "Bevande",

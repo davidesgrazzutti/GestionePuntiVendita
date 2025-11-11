@@ -10,7 +10,7 @@ namespace GestionePuntiVendita.Models
         public int Id { get; set; }
 
         [Required]
-        public int ProductId { get; set; }
+        public string ProductSku { get; set; } = default!;
 
         [Required]
         public string ProductName { get; set; } = default!;

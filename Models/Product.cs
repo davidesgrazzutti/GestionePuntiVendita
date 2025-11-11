@@ -1,15 +1,17 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace GestionePuntiVendita.Models
 {
     /// <summary>
     /// Rappresenta un prodotto disponibile nel punto vendita.
+    /// Lo SKU è utilizzato come chiave primaria.
     /// </summary>
     public class Product
     {
-        public int Id { get; set; }
-
         /// <summary>
-        /// Codice univoco del prodotto (SKU).
+        /// Codice univoco del prodotto (SKU). Funge da CHIAVE PRIMARIA.
         /// </summary>
+        [Key] // Dichiara Sku come chiave primaria
         public string Sku { get; set; } = default!;
 
         /// <summary>
