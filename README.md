@@ -53,7 +53,7 @@ Per accedere alla documentazione interattiva delle API (**Swagger UI**):
 
 ### 3. Frontend
 1.  Posizionati nella cartella frontend  che si trova all'interno della directory principale.
-2.  Apri un terminale in questa cartella e poi digita i seguenti programmi:
+2.  Apri un terminale in questa cartella e poi digita i seguenti comandi:
 
     ```bash
     npm install
