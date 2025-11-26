@@ -3,6 +3,8 @@
 Applicazione **full-stack** per la gestione di un punto vendita:  
 consente di **visualizzare prodotti**, **creare scontrini** e **consultare lo storico delle vendite**.
 
+<img width="1403" height="895" alt="image" src="https://github.com/user-attachments/assets/9768646e-fe0b-49d4-bbc6-bf89151202ef" />
+
 ---
 
 ## **Tecnologie**
